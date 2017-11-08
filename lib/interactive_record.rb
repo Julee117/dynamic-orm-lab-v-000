@@ -63,7 +63,7 @@ class InteractiveRecord
     #BETTER WAY
     value = arg.values.first
     formatted_value = value.class == Fixnum ? value : "'#{value}'"
-    sql = "SELECT * FROM #{self.table_name} WHERE #{attribute_hash.keys.first} = #{formatted_value}"
+    sql = "SELECT * FROM #{self.table_name} WHERE #{arg.keys.first} = #{formatted_value}"
     DB[:conn].execute(sql)
   end
 end
